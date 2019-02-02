@@ -1,5 +1,5 @@
-const Corgi = require("./corgi");
-const { REFRESH_RATE, SECONDS } = require("./config");
+const Corgi = require("../corgi");
+const { REFRESH_RATE, SECONDS } = require("../config");
 
 const refreshRate = REFRESH_RATE * SECONDS;
 

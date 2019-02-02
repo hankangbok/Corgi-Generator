@@ -1,11 +1,19 @@
-const GenerationEngine = require('./newGeneration.js'); 
+const express = require('express');
+const GenerationEngine = require('./generation/newGeneration.js'); 
+
+const app = express();
 const engine = new GenerationEngine();
+
 console.log(engine);
 engine.start();
-setTimeout(() => {
-  engine.stop();
-}, 20000);
 
+app.get('/corgi/new', (req,res)=> {
+  res.json({corgi: engine.generation.newCorgi() });
+}); 
+
+
+
+module.exports = app;
 
 // const Generation = require('./generation.js');
 // const generation = new Generation();
@@ -23,7 +31,7 @@ setTimeout(() => {
 // const Corgi = require('./corgi.js');
 
 // const fooey = new Corgi({
-//   birthdate: new Date(),
+//   birthdate: new Date(), 
 //   nickname: 'fooey'
 // });
 // const baloo = new Corgi({
