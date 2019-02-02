@@ -3,6 +3,9 @@ const { REFRESH_RATE, SECONDS } = require("./config");
 
 const refreshRate = REFRESH_RATE * SECONDS;
 
+// Creates a new generation object when the previous one expires
+
+
 class Generation {
   constructor() {
     this.expiration = this.calculateExpiration();
@@ -26,4 +29,6 @@ class Generation {
     return new Corgi();
   }
 }
+// module.exports = { Generation, GenerationEngine };
+// module.exports = Generation, GenerationEngine;
 module.exports = Generation;

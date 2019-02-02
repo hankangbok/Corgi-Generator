@@ -1,15 +1,24 @@
-const Generation = require('./generation');
-const generation = new Generation();
-console.log('generation', generation);
-const gooby = generation.newCorgi();
-console.log('gooby', gooby);
-
-
+const GenerationEngine = require('./newGeneration.js'); 
+const engine = new GenerationEngine();
+console.log(engine);
+engine.start();
 setTimeout(() => {
-  const mimar = generation.newCorgi();
-  console.log('mimar', mimar);
+  engine.stop();
+}, 20000);
 
-},15000);
+
+// const Generation = require('./generation.js');
+// const generation = new Generation();
+// console.log('generation', generation);
+// const gooby = generation.newCorgi();
+// console.log('gooby', gooby);
+
+
+// setTimeout(() => {
+//   const mimar = generation.newCorgi();
+//   console.log('mimar', mimar);
+
+// },15000);
 
 // const Corgi = require('./corgi.js');
 
