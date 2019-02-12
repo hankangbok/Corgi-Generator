@@ -1,15 +1,18 @@
 const express = require('express');
 const GenerationEngine = require('./generation/newGeneration.js'); 
+const corgiRouter = require('./api/corgi');
+const generationRouter = require('./api/generation');
 
 const app = express();
 const engine = new GenerationEngine();
 
 console.log(engine);
+app.locals.engine = engine;
+app.use('/corgi', corgiRouter);
+app.use('/generation', generationRouter);
+
 engine.start();
 
-app.get('/corgi/new', (req,res)=> {
-  res.json({corgi: engine.generation.newCorgi() });
-}); 
 
 
 
@@ -21,7 +24,7 @@ module.exports = app;
 // const gooby = generation.newCorgi();
 // console.log('gooby', gooby);
 
-
+  
 // setTimeout(() => {
 //   const mimar = generation.newCorgi();
 //   console.log('mimar', mimar);
