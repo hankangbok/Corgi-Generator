@@ -1,6 +1,7 @@
 const TRAITS = require('../../data/traits.json');
 
 const DEFAULT_PROPERTIES = {
+  corgiId: undefined,
   nickname: 'unnamed',
   generationId:undefined,
   get birthdate() {
@@ -23,7 +24,8 @@ const DEFAULT_PROPERTIES = {
 }
 
 class Corgi {
-  constructor({birthdate, nickname, traits, generationId}={}) {
+  constructor({corgiId, birthdate, nickname, traits, generationId}={}) {
+    this.corgiId = corgiId || DEFAULT_PROPERTIES.corgiId;
     this.birthdate = birthdate || DEFAULT_PROPERTIES.birthdate;
     this.nickname = nickname || DEFAULT_PROPERTIES.nickname;
     this.traits = traits || DEFAULT_PROPERTIES.randomTraits;

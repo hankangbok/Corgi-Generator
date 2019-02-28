@@ -22,4 +22,5 @@ class CorgiTraitTable{
 
 }
 
+
 module.exports = CorgiTraitTable;
